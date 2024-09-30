@@ -29,6 +29,7 @@ def evaluar_reglas(ruta):
     reglas = [
         {'ruta': ['A', 'B'], 'condicion': 'Evitar_A'},
         {'ruta': ['C', 'D'], 'condicion': 'Horario_Pico'},
+        {'ruta': ['C', 'B'], 'condicion': 'Contravia'},
     ]
     
     decisiones = []
@@ -41,7 +42,7 @@ def evaluar_reglas(ruta):
     return decisiones
 #Inicio de nuestra aplicación, aca podemos añadir prints para debuggear, tambien podemos cambiar nuestro "inicio" y "fin" para hacer pruebas con otras rutas
 def main():
-    inicio = 'A'
+    inicio = 'C'
     fin = 'E'
     ruta, costo = encontrar_mejor_ruta(G, inicio, fin)
     decisiones = evaluar_reglas(ruta)
